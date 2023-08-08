@@ -10,6 +10,7 @@
 
 # production
 /build
+/design-dependencies
 
 # misc
 .DS_Store
