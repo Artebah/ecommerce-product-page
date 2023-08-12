@@ -1,6 +1,6 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 
-export const theme = createTheme({
+export let theme = createTheme({
   typography: {
     fontFamily: "Kumbh Sans",
   },
@@ -8,7 +8,6 @@ export const theme = createTheme({
     primary: {
       main: "#FF7D1B",
       light: "#FFAC6A",
-      "100": "#FCEEE3",
     },
     text: {
       primary: "#68707D",
@@ -27,5 +26,7 @@ export const theme = createTheme({
     },
   },
 });
+
+theme = responsiveFontSizes(theme);
 
 console.log(theme.breakpoints.values);

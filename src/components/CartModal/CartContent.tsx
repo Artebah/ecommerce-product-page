@@ -4,12 +4,14 @@ import { Box, Typography, useTheme } from "@mui/material";
 //components
 import { OrangeButton } from "../OrangeButton";
 //types
-import { CartItemType } from "../../types";
 import { CartItem } from "./CartItem";
+//hooks
+import { useAppSelector } from "../../hooks";
+//redux
 
 function CartContent() {
   const theme = useTheme();
-  const cartItems: CartItemType[] = [];
+  const cartItems = useAppSelector((state) => state.cart.cartItems);
 
   return (
     <Box
@@ -23,10 +25,10 @@ function CartContent() {
         <>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             {cartItems.map((item) => (
-              <CartItem {...item} />
+              <CartItem key={item.id} {...item} />
             ))}
           </Box>
-          <OrangeButton>Checkout</OrangeButton>
+          <OrangeButton onClick={() => {}}>Checkout</OrangeButton>
         </>
       ) : (
         <Box
