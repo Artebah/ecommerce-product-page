@@ -4,11 +4,16 @@
   "component": {
     "default": {
       "path": "src/components",
+      "customTemplates": {
+        "component": "templates/TemplateName.tsx",
+        "index": "templates/index.ts"
+      },
       "withIndex": true,
-      "withStyle": true,
-      "withTest": true,
-      "withStory": true,
-      "withLazy": true
+      "withStyle": false,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
     }
-  }
+  },
+  "testLibrary": "None"
 }

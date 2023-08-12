@@ -36,6 +36,7 @@ const CartModal: FC<CartModalProps> = ({ onClose, open }) => {
       sx={[
         {
           position: "absolute",
+          zIndex: 1000,
           top: "140%",
           right: "50%",
           borderRadius: 2,
