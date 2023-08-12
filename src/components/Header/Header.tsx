@@ -16,7 +16,7 @@ import CartIcon from "../../assets/images/icon-cart.svg";
 import CurrentUserIcon from "../../assets/images/image-avatar.png";
 
 //hooks
-import { useIsMobile } from "../../hooks";
+import { useAppSelector, useIsMobile } from "../../hooks";
 //components
 import { CartModal } from "../CartModal";
 import { BurgerMenu } from "./BurgerMenu";
@@ -64,6 +64,12 @@ const Header: FC<HeaderProps> = () => {
   const isMobile = useIsMobile();
   const theme = useTheme();
   const [isCartModalOpen, setIsCartModalOpen] = React.useState(false);
+
+  const cartItems = useAppSelector((state) => state.cart.cartItems);
+
+  const getNumberOfCartItems = () => {
+    return cartItems.reduce((prev, item) => prev + item.count, 0);
+  };
 
   return (
     <AppBar
@@ -114,7 +120,11 @@ const Header: FC<HeaderProps> = () => {
           sx={{ display: "flex", alignItems: "center", gap: { sm: 3, xs: 0.5 } }}>
           <Box sx={{ position: { xs: "static", sm: "relative" } }}>
             <IconButton onClick={() => setIsCartModalOpen(!isCartModalOpen)} size="large">
-              <Badge badgeContent="" color="primary" invisible={true}>
+              <Badge
+                sx={{ color: "#fff" }}
+                badgeContent={getNumberOfCartItems()}
+                color="primary"
+                invisible={false}>
                 <img src={CartIcon} alt="cart" />
               </Badge>
             </IconButton>
