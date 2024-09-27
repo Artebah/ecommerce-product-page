@@ -1,5 +1,5 @@
 # Ecommerce Product Page
-A web application for displaying and managing an ecommerce product page, built with TypeScript, HTML, and CSS.
+A web application for displaying and managing an ecommerce product page, built with React, Redux, TypeScript and SCSS.
 
 ## Technologies
 * React
@@ -9,7 +9,6 @@ A web application for displaying and managing an ecommerce product page, built w
 * Redux persist
 * Saas
 * generate-react-cli
-
 
 ## Features
 **Product Display:**
@@ -22,4 +21,4 @@ Users can add products to their cart and manage quantities.
 Ensures optimal viewing experience across various devices.
 
 ## How to launch:
-You can view the live version of the project [here](https://multi-step-form-artebah.vercel.app/).
+You can view the live version of the project [here](https://ecommerce-product-page-artebah.vercel.app/).
